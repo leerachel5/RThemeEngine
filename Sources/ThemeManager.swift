@@ -8,9 +8,13 @@
 import Combine
 
 public class ThemeManager: ObservableObject {
-    @Published var selectedTheme: ThemeProtocol = MainTheme()
+    @Published public var selectedTheme: ThemeProtocol = MainTheme()
     
-    func setTheme(_ theme: ThemeProtocol) {
+    public init(theme: ThemeProtocol) {
+        self.selectedTheme = theme
+    }
+    
+    public func setTheme(_ theme: ThemeProtocol) {
         selectedTheme = theme
     }
 }
