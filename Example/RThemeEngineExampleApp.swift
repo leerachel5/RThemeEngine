@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RThemeEngineExampleApp: App {
+    @StateObject var themeManager = ThemeManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(themeManager)
         }
     }
 }

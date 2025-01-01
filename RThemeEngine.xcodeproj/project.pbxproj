@@ -10,12 +10,18 @@
 		2A7221792D25311600D7B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221742D25311600D7B56E /* ContentView.swift */; };
 		2A72217A2D25311600D7B56E /* RThemeEngineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */; };
 		2A7221832D2535F100D7B56E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7221822D2535F100D7B56E /* Colors.xcassets */; };
+		2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221852D25379300D7B56E /* ThemeManager.swift */; };
+		2A7221892D25380100D7B56E /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221882D25380100D7B56E /* MainTheme.swift */; };
+		2A72218B2D25382000D7B56E /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A72218A2D25382000D7B56E /* ThemeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A7221742D25311600D7B56E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RThemeEngineExampleApp.swift; sourceTree = "<group>"; };
 		2A7221822D2535F100D7B56E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2A7221852D25379300D7B56E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		2A7221882D25380100D7B56E /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
+		2A72218A2D25382000D7B56E /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
 		2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RThemeEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAD6D7E2D2530D5000522F8 /* RThemeEngineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RThemeEngineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -50,6 +56,9 @@
 		2A72217F2D2535A200D7B56E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2A7221852D25379300D7B56E /* ThemeManager.swift */,
+				2A72218A2D25382000D7B56E /* ThemeProtocol.swift */,
+				2A7221872D2537EC00D7B56E /* Themes */,
 				2A7221842D25376600D7B56E /* Resources */,
 			);
 			path = Sources;
@@ -69,6 +78,14 @@
 				2A7221812D2535CF00D7B56E /* Main */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A7221872D2537EC00D7B56E /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				2A7221882D25380100D7B56E /* MainTheme.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		2AAD6D5A2D252D2E000522F8 = {
@@ -198,8 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A72218B2D25382000D7B56E /* ThemeProtocol.swift in Sources */,
 				2A7221792D25311600D7B56E /* ContentView.swift in Sources */,
 				2A72217A2D25311600D7B56E /* RThemeEngineExampleApp.swift in Sources */,
+				2A7221892D25380100D7B56E /* MainTheme.swift in Sources */,
+				2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
