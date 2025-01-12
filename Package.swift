@@ -8,10 +8,13 @@ let package = Package(
     products: [
         .library(
             name: "RThemeEngine",
-            targets: ["RThemeEngine"]),
+            targets: ["RThemeEngine"]
+        ),
     ],
     targets: [
         .target(
-            name: "RThemeEngine")
+            name: "RThemeEngine",
+            path: "Sources"
+        )
     ]
 )
