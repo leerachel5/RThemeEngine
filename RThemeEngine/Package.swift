@@ -17,8 +17,8 @@ let package = Package(
     targets: [
         .target(
             name: "RThemeEngine",
-            path: "Sources",
-            resources: [.process("Resources")]
+            path: "Source",
+            resources: [.process("Resources/MainTheme/Colors.xcassets")]
         )
     ]
 )
