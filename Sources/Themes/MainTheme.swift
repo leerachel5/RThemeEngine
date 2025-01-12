@@ -8,12 +8,14 @@
 import SwiftUI
 
 public struct MainTheme: ThemeProtocol {
-    public let accentColor = Color("mainAccentColor")
-    public let backgroundColor = Color("mainBackgroundColor")
-    public let dividerColor = Color("mainDividerColor")
-    public let primaryColor = Color("mainPrimaryColor")
-    public let primaryTextColor = Color("mainPrimaryTextColor")
-    public let secondaryColor = Color("mainSecondaryColor")
-    public let secondaryTextColor = Color("mainSecondaryTextColor")
-    public let surfaceColor = Color("mainSurfaceColor")
+    public let accentColor = Color("mainAccentColor", bundle: Bundle.rThemeEngineBundle)
+    public let backgroundColor = Color("mainBackgroundColor", bundle: Bundle.rThemeEngineBundle)
+    public let dividerColor = Color("mainDividerColor", bundle: Bundle.rThemeEngineBundle)
+    public let primaryColor = Color("mainPrimaryColor", bundle: Bundle.rThemeEngineBundle)
+    public let primaryTextColor = Color("mainPrimaryTextColor", bundle: Bundle.rThemeEngineBundle)
+    public let secondaryColor = Color("mainSecondaryColor", bundle: Bundle.rThemeEngineBundle)
+    public let secondaryTextColor = Color("mainSecondaryTextColor", bundle: Bundle.rThemeEngineBundle)
+    public let surfaceColor = Color("mainSurfaceColor", bundle: Bundle.rThemeEngineBundle)
+    
+    public init() {}
 }

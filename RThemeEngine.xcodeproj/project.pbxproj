@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A7221792D25311600D7B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221742D25311600D7B56E /* ContentView.swift */; };
-		2A72217A2D25311600D7B56E /* RThemeEngineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */; };
 		2A7221832D2535F100D7B56E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7221822D2535F100D7B56E /* Colors.xcassets */; };
 		2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221852D25379300D7B56E /* ThemeManager.swift */; };
 		2A7221892D25380100D7B56E /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221882D25380100D7B56E /* MainTheme.swift */; };
 		2A72218B2D25382000D7B56E /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A72218A2D25382000D7B56E /* ThemeProtocol.swift */; };
+		2A72218C2D25454800D7B56E /* RThemeEngineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */; };
+		2A72218D2D25454A00D7B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221742D25311600D7B56E /* ContentView.swift */; };
+		2A7221982D33428C00D7B56E /* RThemeEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */; };
+		2A7221992D33428C00D7B56E /* RThemeEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A7221A12D33493E00D7B56E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A72219F2D33493E00D7B56E /* Bundle+Extension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A72219A2D33428C00D7B56E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AAD6D5B2D252D2E000522F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AAD6D632D252D2E000522F8;
+			remoteInfo = RThemeEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A72219C2D33428C00D7B56E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2A7221992D33428C00D7B56E /* RThemeEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A7221742D25311600D7B56E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +49,7 @@
 		2A7221852D25379300D7B56E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		2A7221882D25380100D7B56E /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
 		2A72218A2D25382000D7B56E /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		2A72219F2D33493E00D7B56E /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RThemeEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAD6D7E2D2530D5000522F8 /* RThemeEngineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RThemeEngineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -38,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7221982D33428C00D7B56E /* RThemeEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,24 +87,25 @@
 			children = (
 				2A7221852D25379300D7B56E /* ThemeManager.swift */,
 				2A72218A2D25382000D7B56E /* ThemeProtocol.swift */,
+				2A7221A02D33493E00D7B56E /* Utility */,
 				2A7221872D2537EC00D7B56E /* Themes */,
 				2A7221842D25376600D7B56E /* Resources */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		2A7221812D2535CF00D7B56E /* Main */ = {
+		2A7221812D2535CF00D7B56E /* MainTheme */ = {
 			isa = PBXGroup;
 			children = (
 				2A7221822D2535F100D7B56E /* Colors.xcassets */,
 			);
-			path = Main;
+			path = MainTheme;
 			sourceTree = "<group>";
 		};
 		2A7221842D25376600D7B56E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A7221812D2535CF00D7B56E /* Main */,
+				2A7221812D2535CF00D7B56E /* MainTheme */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -88,12 +118,28 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
+		2A7221972D33428C00D7B56E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A7221A02D33493E00D7B56E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2A72219F2D33493E00D7B56E /* Bundle+Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		2AAD6D5A2D252D2E000522F8 = {
 			isa = PBXGroup;
 			children = (
 				2A7221762D25311600D7B56E /* Example */,
 				2A72217F2D2535A200D7B56E /* Sources */,
 				2AAD6D652D252D2E000522F8 /* Products */,
+				2A7221972D33428C00D7B56E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,12 +190,16 @@
 				2AAD6D7A2D2530D5000522F8 /* Sources */,
 				2AAD6D7B2D2530D5000522F8 /* Frameworks */,
 				2AAD6D7C2D2530D5000522F8 /* Resources */,
+				2A72219C2D33428C00D7B56E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A72219B2D33428C00D7B56E /* PBXTargetDependency */,
 			);
 			name = RThemeEngineExample;
+			packageProductDependencies = (
+			);
 			productName = RThemeEngineExample;
 			productReference = 2AAD6D7E2D2530D5000522F8 /* RThemeEngineExample.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +232,8 @@
 				Base,
 			);
 			mainGroup = 2AAD6D5A2D252D2E000522F8;
+			packageReferences = (
+			);
 			productRefGroup = 2AAD6D652D252D2E000522F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,10 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A72218B2D25382000D7B56E /* ThemeProtocol.swift in Sources */,
-				2A7221792D25311600D7B56E /* ContentView.swift in Sources */,
-				2A72217A2D25311600D7B56E /* RThemeEngineExampleApp.swift in Sources */,
 				2A7221892D25380100D7B56E /* MainTheme.swift in Sources */,
 				2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */,
+				2A7221A12D33493E00D7B56E /* Bundle+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +278,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A72218D2D25454A00D7B56E /* ContentView.swift in Sources */,
+				2A72218C2D25454800D7B56E /* RThemeEngineExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A72219B2D33428C00D7B56E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AAD6D632D252D2E000522F8 /* RThemeEngine */;
+			targetProxy = 2A72219A2D33428C00D7B56E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2AAD6D692D252D2E000522F8 /* Debug */ = {
@@ -432,7 +493,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RThemeEngineExample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 83RMW7CPM5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,7 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RThemeEngineExample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 83RMW7CPM5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
