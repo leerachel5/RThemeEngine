@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A7221FE2D33735400D7B56E"
+               BlueprintIdentifier = "2AAD6D7D2D2530D5000522F8"
                BuildableName = "RThemeEngineExample.app"
                BlueprintName = "RThemeEngineExample"
-               ReferencedContainer = "container:RThemeEngineExample.xcodeproj">
+               ReferencedContainer = "container:RThemeEngine.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A7221FE2D33735400D7B56E"
+            BlueprintIdentifier = "2AAD6D7D2D2530D5000522F8"
             BuildableName = "RThemeEngineExample.app"
             BlueprintName = "RThemeEngineExample"
-            ReferencedContainer = "container:RThemeEngineExample.xcodeproj">
+            ReferencedContainer = "container:RThemeEngine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A7221FE2D33735400D7B56E"
+            BlueprintIdentifier = "2AAD6D7D2D2530D5000522F8"
             BuildableName = "RThemeEngineExample.app"
             BlueprintName = "RThemeEngineExample"
-            ReferencedContainer = "container:RThemeEngineExample.xcodeproj">
+            ReferencedContainer = "container:RThemeEngine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

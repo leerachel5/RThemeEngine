@@ -14,9 +14,9 @@ extension Bundle {
     /// Retrieves the current framework's bundle.
     static let rThemeEngineBundle = {
         #if SWIFT_PACKAGE
-        return Bundle.module
+        Bundle.module
         #else
-        return Bundle(for: FrameworkResourceLocator.self)
+        Bundle(for: FrameworkResourceLocator.self)
         #endif
     }()
 }
