@@ -71,5 +71,6 @@ struct ContentView_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         ContentView()
             .environmentObject(themeManager)
+            .applyThemeManager(themeManager)
     }
 }
