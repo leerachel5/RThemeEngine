@@ -19,8 +19,8 @@ struct SetThemeViewModifier: ViewModifier {
 }
 
 extension View {
-    public func applyThemeManager(_ theme: ThemeManager = ThemeManager()) -> some View {
-        theme.colorSchemeMode.apply()
-        return self.modifier(SetThemeViewModifier(theme: theme.selectedTheme))
+    public func applyThemeManager(_ themeManager: ThemeManager = ThemeManager()) -> some View {
+        themeManager.colorSchemeMode.apply()
+        return self.modifier(SetThemeViewModifier(theme: themeManager.selectedTheme))
     }
 }
