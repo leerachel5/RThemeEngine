@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetThemeViewModifier: ViewModifier {
+struct ApplyThemeViewModifier: ViewModifier {
     let theme: ThemeProtocol
     
     func body(content: Content) -> some View {
@@ -19,8 +19,7 @@ struct SetThemeViewModifier: ViewModifier {
 }
 
 extension View {
-    public func applyThemeManager(_ themeManager: ThemeManager = ThemeManager()) -> some View {
-        themeManager.colorSchemeMode.apply()
-        return self.modifier(SetThemeViewModifier(theme: themeManager.selectedTheme))
+    public func applyTheme(_ theme: ThemeProtocol = MainTheme()) -> some View {
+        return self.modifier(ApplyThemeViewModifier(theme: theme))
     }
 }
