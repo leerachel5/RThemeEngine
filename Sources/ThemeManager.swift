@@ -8,6 +8,7 @@
 import UIKit
 
 public class ThemeManager: ObservableObject {
+    // MARK: Instance Properties
     @Published public var theme: Theme
     @Published public var colorSchemeMode: ColorSchemeMode {
         didSet {
@@ -16,6 +17,7 @@ public class ThemeManager: ObservableObject {
         }
     }
     
+    // MARK: Initializers
     public init(
         theme: Theme? = nil,
         colorSchemeMode: ColorSchemeMode? = nil
@@ -30,6 +32,7 @@ public class ThemeManager: ObservableObject {
         NotificationCenter.default.removeObserver(self, name: UIWindow.didBecomeKeyNotification, object: nil)
     }
     
+    // MARK: User Defaults Helper Methods
     private func saveColorSchemeModeToUserDefaults() {
         UserDefaults.standard.set(colorSchemeMode.rawValue, forKey: UserDefaultsKey.colorSchemeMode)
     }
@@ -42,12 +45,15 @@ public class ThemeManager: ObservableObject {
         return nil
     }
     
+    // MARK: Observers
+    /// Called every time the `onColorScheme` instance prop is set.
     private func onColorSchemeChanged() {
         if let mainWindow = UIWindow.main {
             colorSchemeMode.apply(to: mainWindow)
         }
     }
     
+    /// Called whenever a window becomes the key window.
     @objc private func windowSceneDidBecomeActive() {
         if let mainWindow = UIWindow.main {
             colorSchemeMode.apply(to: mainWindow)

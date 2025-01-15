@@ -22,6 +22,8 @@ public enum ColorSchemeMode: String, CaseIterable, Identifiable {
         }
     }
     
+    /// Applies the color scheme mode to the given window.
+    /// - Parameter window: The `UIWindow` instance to which the color scheme mode will be applied.
     func apply(to window: UIWindow) {
         window.overrideUserInterfaceStyle = uiUserInterfaceStyle
     }
