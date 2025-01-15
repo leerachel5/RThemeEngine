@@ -10,59 +10,81 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var themeManager: ThemeManager
+    @State private var showingSettings: Bool = false
+    
     private var theme: Theme {
-        themeManager.selectedTheme
+        themeManager.theme
     }
     
     var body: some View {
-        VStack(spacing: 50) {
-            Text("This is some text on a surface.")
-                .foregroundStyle(theme.primaryTextColor)
-                .padding(12)
-                .background(theme.surfaceColor)
-                .cornerRadius(12)
-            Divider().background(theme.dividerColor)
-            VStack {
-                Text("This is some primary text.")
+        NavigationStack {
+            VStack(spacing: 50) {
+                Text("This is some text on a surface.")
                     .foregroundStyle(theme.primaryTextColor)
-                    .font(.headline)
-                Text("And some secondary text.")
-                    .foregroundStyle(theme.secondaryTextColor)
-                    .font(.subheadline)
-            }
-            Divider().background(theme.dividerColor)
-            VStack(spacing: 10) {
-                Text("These are buttons.")
-                    .foregroundStyle(theme.primaryTextColor)
-                HStack {
-                    VStack {
-                        Button(action: {}, label: {
-                            Text("Click Me!")
-                                .padding(10)
-                                .background(theme.primaryColor)
-                                .foregroundColor(theme.primaryTextColor)
-                                .cornerRadius(12)
-                        })
-                        Text("Primary")
-                            .foregroundStyle(theme.primaryTextColor)
-                            .font(.caption)
-                    }
-                    VStack {
-                        Button(action: {}, label: {
-                            Text("Click Me!")
-                                .padding(10)
-                                .background(theme.secondaryColor)
-                                .foregroundColor(theme.primaryTextColor)
-                                .cornerRadius(12)
-                        })
-                        Text("Secondary")
-                            .foregroundStyle(theme.primaryTextColor)
-                            .font(.caption)
+                    .padding(12)
+                    .background(theme.surfaceColor)
+                    .cornerRadius(12)
+                Divider().background(theme.dividerColor)
+                VStack {
+                    Text("This is some primary text.")
+                        .foregroundStyle(theme.primaryTextColor)
+                        .font(.headline)
+                    Text("And some secondary text.")
+                        .foregroundStyle(theme.secondaryTextColor)
+                        .font(.subheadline)
+                }
+                Divider().background(theme.dividerColor)
+                VStack(spacing: 10) {
+                    Text("These are buttons.")
+                        .foregroundStyle(theme.primaryTextColor)
+                    HStack {
+                        VStack {
+                            Button(action: {}, label: {
+                                Text("Click Me!")
+                                    .padding(10)
+                                    .background(theme.primaryColor)
+                                    .foregroundColor(theme.primaryTextColor)
+                                    .cornerRadius(12)
+                            })
+                            Text("Primary")
+                                .foregroundStyle(theme.primaryTextColor)
+                                .font(.caption)
+                        }
+                        VStack {
+                            Button(action: {}, label: {
+                                Text("Click Me!")
+                                    .padding(10)
+                                    .background(theme.secondaryColor)
+                                    .foregroundColor(theme.primaryTextColor)
+                                    .cornerRadius(12)
+                            })
+                            Text("Secondary")
+                                .foregroundStyle(theme.primaryTextColor)
+                                .font(.caption)
+                        }
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    settingsButton
+                }
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView(showingSettings: $showingSettings)
+                    .presentationDetents([.fraction(0.99)])
+            }
         }
-        .padding()
+    }
+    
+    // MARK: Toolbar Items
+    private var settingsButton: some View {
+        Button(action: {
+            showingSettings.toggle()
+        }) {
+            Image(systemName: "gearshape")
+        }
+        .foregroundStyle(Color.accentColor)
     }
 }
 
@@ -71,6 +93,5 @@ struct ContentView_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         ContentView()
             .environmentObject(themeManager)
-            .applyThemeManager(themeManager)
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct MainTheme: Theme {
+    // MARK: Colors
     public let accentColor = Color("mainAccentColor", bundle: Bundle.rThemeEngineBundle)
     public let backgroundColor = Color("mainBackgroundColor", bundle: Bundle.rThemeEngineBundle)
     public let dividerColor = Color("mainDividerColor", bundle: Bundle.rThemeEngineBundle)

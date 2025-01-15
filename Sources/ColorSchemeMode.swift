@@ -5,7 +5,7 @@
 //  Created by Rachel Lee on 1/13/25.
 //
 
-import SwiftUI
+import UIKit
 
 public enum ColorSchemeMode: String, CaseIterable, Identifiable {
     case light
@@ -20,5 +20,9 @@ public enum ColorSchemeMode: String, CaseIterable, Identifiable {
         case .dark: .dark
         case .system: .unspecified
         }
+    }
+    
+    func apply(to window: UIWindow) {
+        window.overrideUserInterfaceStyle = uiUserInterfaceStyle
     }
 }
