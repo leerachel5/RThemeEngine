@@ -31,11 +31,11 @@ public class ThemeManager: ObservableObject {
     }
     
     private func saveColorSchemeModeToUserDefaults() {
-        UserDefaults.standard.set(colorSchemeMode.rawValue, forKey: "colorSchemeMode")
+        UserDefaults.standard.set(colorSchemeMode.rawValue, forKey: UserDefaultsKey.colorSchemeMode)
     }
     
     private static func loadColorSchemeModeFromUserDefaults() -> ColorSchemeMode? {
-        if let storedRawValue = UserDefaults.standard.string(forKey: "colorSchemeMode"),
+        if let storedRawValue = UserDefaults.standard.string(forKey: UserDefaultsKey.colorSchemeMode),
            let colorSchemeMode = ColorSchemeMode(rawValue: storedRawValue) {
             return colorSchemeMode
         }
