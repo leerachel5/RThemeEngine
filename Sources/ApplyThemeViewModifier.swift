@@ -1,5 +1,5 @@
 //
-//  ThemeViewModifiers.swift
+//  ApplyThemeViewModifier.swift
 //  RThemeEngine
 //
 //  Created by Rachel Lee on 1/12/25.
