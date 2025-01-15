@@ -12,6 +12,8 @@ struct SettingsView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @Binding var showingSettings: Bool
     
+    private var theme: Theme { themeManager.theme }
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -20,12 +22,17 @@ struct SettingsView: View {
                         Text("General Settings")
                         .foregroundStyle(.secondary)
                 ) {
-                    Picker("UI User Interface Style", selection: $themeManager.uiUserInterfaceStyle) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Appearance")
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline)
+                        Picker("UI User Interface Style", selection: $themeManager.uiUserInterfaceStyle) {
                             ForEach(UIUserInterfaceStyle.allCases) { style in
                                 Text(style.displayName).tag(style)
                             }
                         }
-                    .pickerStyle(.palette)
+                        .pickerStyle(.palette)
+                    }
                 }
             }
             .toolbar {

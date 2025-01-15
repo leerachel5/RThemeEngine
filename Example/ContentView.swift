@@ -12,9 +12,7 @@ struct ContentView: View {
     @EnvironmentObject private var themeManager: ThemeManager
     @State private var showingSettings: Bool = false
     
-    private var theme: Theme {
-        themeManager.theme
-    }
+    private var theme: Theme { themeManager.theme }
     
     var body: some View {
         NavigationStack {
