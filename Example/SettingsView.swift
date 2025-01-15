@@ -20,11 +20,11 @@ struct SettingsView: View {
                         Text("General Settings")
                         .foregroundStyle(.secondary)
                 ) {
-                    Picker("Color scheme mode", selection: $themeManager.colorSchemeMode) {
-                        ForEach(ColorSchemeMode.allCases) { mode in
-                            Text(mode.rawValue).tag(mode)
+                    Picker("UI User Interface Style", selection: $themeManager.uiUserInterfaceStyle) {
+                            ForEach(UIUserInterfaceStyle.allCases) { style in
+                                Text(style.displayName).tag(style)
+                            }
                         }
-                    }
                     .pickerStyle(.palette)
                 }
             }

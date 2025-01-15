@@ -10,20 +10,20 @@ import UIKit
 public class ThemeManager: ObservableObject {
     // MARK: Instance Properties
     @Published public var theme: Theme
-    @Published public var colorSchemeMode: ColorSchemeMode {
+    @Published public var uiUserInterfaceStyle: UIUserInterfaceStyle {
         didSet {
-            saveColorSchemeModeToUserDefaults()
-            onColorSchemeChanged()
+            saveUIUserInterfaceStyleToUserDefaults()
+            onUIUserInterfaceStyleChanged()
         }
     }
     
     // MARK: Initializers
     public init(
         theme: Theme? = nil,
-        colorSchemeMode: ColorSchemeMode? = nil
+        uiUserInterfaceStyle: UIUserInterfaceStyle? = nil
     ) {
         self.theme = theme ?? MainTheme()
-        self.colorSchemeMode = colorSchemeMode ?? Self.loadColorSchemeModeFromUserDefaults() ?? .system
+        self.uiUserInterfaceStyle = uiUserInterfaceStyle ?? Self.loadUIUserInterfaceStyleFromUserDefaults() ?? .unspecified
         
         NotificationCenter.default.addObserver(self, selector: #selector(windowSceneDidBecomeActive), name: UIWindow.didBecomeKeyNotification, object: nil)
     }
@@ -33,30 +33,30 @@ public class ThemeManager: ObservableObject {
     }
     
     // MARK: User Defaults Helper Methods
-    private func saveColorSchemeModeToUserDefaults() {
-        UserDefaults.standard.set(colorSchemeMode.rawValue, forKey: UserDefaultsKey.colorSchemeMode)
+    private func saveUIUserInterfaceStyleToUserDefaults() {
+        UserDefaults.standard.set(uiUserInterfaceStyle.rawValue.description, forKey: UserDefaultsKey.uiUserInterfaceStyle)
     }
     
-    private static func loadColorSchemeModeFromUserDefaults() -> ColorSchemeMode? {
-        if let storedRawValue = UserDefaults.standard.string(forKey: UserDefaultsKey.colorSchemeMode),
-           let colorSchemeMode = ColorSchemeMode(rawValue: storedRawValue) {
-            return colorSchemeMode
+    private static func loadUIUserInterfaceStyleFromUserDefaults() -> UIUserInterfaceStyle? {
+        if let storedRawValue = UserDefaults.standard.string(forKey: UserDefaultsKey.uiUserInterfaceStyle), let storedRawValueAsInt = Int(storedRawValue) {
+           let uiUserInterfaceStyle = UIUserInterfaceStyle(rawValue: storedRawValueAsInt)
+            return uiUserInterfaceStyle
         }
         return nil
     }
     
     // MARK: Observers
-    /// Called every time the `onColorScheme` instance prop is set.
-    private func onColorSchemeChanged() {
+    /// Called every time the `uiUserInterfaceStyle` instance prop is set.
+    private func onUIUserInterfaceStyleChanged() {
         if let mainWindow = UIWindow.main {
-            colorSchemeMode.apply(to: mainWindow)
+            uiUserInterfaceStyle.apply(to: mainWindow)
         }
     }
     
     /// Called whenever a window becomes the key window.
     @objc private func windowSceneDidBecomeActive() {
         if let mainWindow = UIWindow.main {
-            colorSchemeMode.apply(to: mainWindow)
+            uiUserInterfaceStyle.apply(to: mainWindow)
         }
     }
 }

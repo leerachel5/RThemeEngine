@@ -8,5 +8,5 @@
 import Foundation
 
 struct UserDefaultsKey {
-    static let colorSchemeMode = "colorSchemeMode"
+    static let uiUserInterfaceStyle = "uiUserInterfaceStyle"
 }
