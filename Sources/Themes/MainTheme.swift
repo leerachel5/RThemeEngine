@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct MainTheme: ThemeProtocol {
+public struct MainTheme: Theme {
     public let accentColor = Color("mainAccentColor", bundle: Bundle.rThemeEngineBundle)
     public let backgroundColor = Color("mainBackgroundColor", bundle: Bundle.rThemeEngineBundle)
     public let dividerColor = Color("mainDividerColor", bundle: Bundle.rThemeEngineBundle)

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var themeManager: ThemeManager
-    private var theme: ThemeProtocol {
+    private var theme: Theme {
         themeManager.selectedTheme
     }
     

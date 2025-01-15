@@ -10,12 +10,12 @@
 		2A7221832D2535F100D7B56E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7221822D2535F100D7B56E /* Colors.xcassets */; };
 		2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221852D25379300D7B56E /* ThemeManager.swift */; };
 		2A7221892D25380100D7B56E /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221882D25380100D7B56E /* MainTheme.swift */; };
-		2A72218B2D25382000D7B56E /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A72218A2D25382000D7B56E /* ThemeProtocol.swift */; };
 		2A72218C2D25454800D7B56E /* RThemeEngineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */; };
 		2A72218D2D25454A00D7B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221742D25311600D7B56E /* ContentView.swift */; };
 		2A7221982D33428C00D7B56E /* RThemeEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */; };
 		2A7221992D33428C00D7B56E /* RThemeEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A7221A12D33493E00D7B56E /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A72219F2D33493E00D7B56E /* Bundle+Extension.swift */; };
+		2AD2BC832D3770990061B6CD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2BC822D3770990061B6CD /* Theme.swift */; };
 		2AF864EB2D3511D0003DD546 /* ColorSchemeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF864EA2D3511D0003DD546 /* ColorSchemeMode.swift */; };
 		2AF864ED2D351B5E003DD546 /* ThemeViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF864EC2D351B5E003DD546 /* ThemeViewModifiers.swift */; };
 /* End PBXBuildFile section */
@@ -50,11 +50,11 @@
 		2A7221822D2535F100D7B56E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2A7221852D25379300D7B56E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		2A7221882D25380100D7B56E /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
-		2A72218A2D25382000D7B56E /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
 		2A72219F2D33493E00D7B56E /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		2A7221AC2D335D5200D7B56E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RThemeEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AAD6D7E2D2530D5000522F8 /* RThemeEngineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RThemeEngineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD2BC822D3770990061B6CD /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2AF864EA2D3511D0003DD546 /* ColorSchemeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeMode.swift; sourceTree = "<group>"; };
 		2AF864EC2D351B5E003DD546 /* ThemeViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,8 +90,8 @@
 		2A72217F2D2535A200D7B56E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2AD2BC822D3770990061B6CD /* Theme.swift */,
 				2A7221852D25379300D7B56E /* ThemeManager.swift */,
-				2A72218A2D25382000D7B56E /* ThemeProtocol.swift */,
 				2AF864EA2D3511D0003DD546 /* ColorSchemeMode.swift */,
 				2AF864EC2D351B5E003DD546 /* ThemeViewModifiers.swift */,
 				2A7221A02D33493E00D7B56E /* Utility */,
@@ -275,10 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A72218B2D25382000D7B56E /* ThemeProtocol.swift in Sources */,
 				2AF864ED2D351B5E003DD546 /* ThemeViewModifiers.swift in Sources */,
 				2A7221892D25380100D7B56E /* MainTheme.swift in Sources */,
 				2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */,
+				2AD2BC832D3770990061B6CD /* Theme.swift in Sources */,
 				2AF864EB2D3511D0003DD546 /* ColorSchemeMode.swift in Sources */,
 				2A7221A12D33493E00D7B56E /* Bundle+Extension.swift in Sources */,
 			);
