@@ -14,7 +14,7 @@ public enum ColorSchemeMode: String, CaseIterable, Identifiable {
     
     public var id: String { self.rawValue }
     
-    public var uiUserInterfaceStyle: UIUserInterfaceStyle {
+    private var uiUserInterfaceStyle: UIUserInterfaceStyle {
         switch self {
         case .light: .light
         case .dark: .dark
