@@ -16,6 +16,7 @@ struct RThemeEngineExampleApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(themeManager)
+                .applyTheme(themeManager.theme)
         }
     }
 }

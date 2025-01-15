@@ -20,34 +20,28 @@ struct ContentView: View {
         NavigationStack {
             VStack(spacing: 50) {
                 Text("This is some text on a surface.")
-                    .foregroundStyle(theme.primaryTextColor)
                     .padding(12)
                     .background(theme.surfaceColor)
                     .cornerRadius(12)
                 Divider().background(theme.dividerColor)
                 VStack {
                     Text("This is some primary text.")
-                        .foregroundStyle(theme.primaryTextColor)
                         .font(.headline)
                     Text("And some secondary text.")
-                        .foregroundStyle(theme.secondaryTextColor)
                         .font(.subheadline)
                 }
                 Divider().background(theme.dividerColor)
                 VStack(spacing: 10) {
                     Text("These are buttons.")
-                        .foregroundStyle(theme.primaryTextColor)
                     HStack {
                         VStack {
                             Button(action: {}, label: {
                                 Text("Click Me!")
                                     .padding(10)
                                     .background(theme.primaryColor)
-                                    .foregroundColor(theme.primaryTextColor)
                                     .cornerRadius(12)
                             })
                             Text("Primary")
-                                .foregroundStyle(theme.primaryTextColor)
                                 .font(.caption)
                         }
                         VStack {
@@ -55,11 +49,9 @@ struct ContentView: View {
                                 Text("Click Me!")
                                     .padding(10)
                                     .background(theme.secondaryColor)
-                                    .foregroundColor(theme.primaryTextColor)
                                     .cornerRadius(12)
                             })
                             Text("Secondary")
-                                .foregroundStyle(theme.primaryTextColor)
                                 .font(.caption)
                         }
                     }
@@ -93,5 +85,6 @@ struct ContentView_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         ContentView()
             .environmentObject(themeManager)
+            .applyTheme(themeManager.theme)
     }
 }

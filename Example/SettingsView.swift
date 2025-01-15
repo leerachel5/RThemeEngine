@@ -60,5 +60,6 @@ struct SettingsView_Previews: PreviewProvider {
         let themeManager = ThemeManager()
         SettingsView(showingSettings: .constant(true))
             .environmentObject(themeManager)
+            .applyTheme(themeManager.theme)
     }
 }
