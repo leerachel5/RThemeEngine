@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A7221832D2535F100D7B56E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7221822D2535F100D7B56E /* Colors.xcassets */; };
+		2A4654DF2D38C95100E89E6A /* GrayscaleThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4654DE2D38C95100E89E6A /* GrayscaleThemeColors.xcassets */; };
+		2A7221832D2535F100D7B56E /* MainThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7221822D2535F100D7B56E /* MainThemeColors.xcassets */; };
 		2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221852D25379300D7B56E /* ThemeManager.swift */; };
-		2A7221892D25380100D7B56E /* MainTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221882D25380100D7B56E /* MainTheme.swift */; };
 		2A72218C2D25454800D7B56E /* RThemeEngineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */; };
 		2A72218D2D25454A00D7B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7221742D25311600D7B56E /* ContentView.swift */; };
 		2A7221982D33428C00D7B56E /* RThemeEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */; };
@@ -48,11 +48,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A4654DE2D38C95100E89E6A /* GrayscaleThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GrayscaleThemeColors.xcassets; sourceTree = "<group>"; };
 		2A7221742D25311600D7B56E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A7221752D25311600D7B56E /* RThemeEngineExampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RThemeEngineExampleApp.swift; sourceTree = "<group>"; };
-		2A7221822D2535F100D7B56E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2A7221822D2535F100D7B56E /* MainThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainThemeColors.xcassets; sourceTree = "<group>"; };
 		2A7221852D25379300D7B56E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		2A7221882D25380100D7B56E /* MainTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTheme.swift; sourceTree = "<group>"; };
 		2A72219F2D33493E00D7B56E /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		2A7221AC2D335D5200D7B56E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2AAD6D642D252D2E000522F8 /* RThemeEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RThemeEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A4654DD2D38C93400E89E6A /* GrayscaleTheme */ = {
+			isa = PBXGroup;
+			children = (
+				2A4654DE2D38C95100E89E6A /* GrayscaleThemeColors.xcassets */,
+			);
+			path = GrayscaleTheme;
+			sourceTree = "<group>";
+		};
 		2A7221762D25311600D7B56E /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +110,6 @@
 				2AF864EC2D351B5E003DD546 /* ApplyThemeViewModifier.swift */,
 				2AD2BC8C2D378D3B0061B6CD /* UserDefaultsKey.swift */,
 				2A7221A02D33493E00D7B56E /* Utility */,
-				2A7221872D2537EC00D7B56E /* Themes */,
 				2A7221842D25376600D7B56E /* Resources */,
 			);
 			path = Sources;
@@ -111,7 +118,7 @@
 		2A7221812D2535CF00D7B56E /* MainTheme */ = {
 			isa = PBXGroup;
 			children = (
-				2A7221822D2535F100D7B56E /* Colors.xcassets */,
+				2A7221822D2535F100D7B56E /* MainThemeColors.xcassets */,
 			);
 			path = MainTheme;
 			sourceTree = "<group>";
@@ -119,17 +126,10 @@
 		2A7221842D25376600D7B56E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A4654DD2D38C93400E89E6A /* GrayscaleTheme */,
 				2A7221812D2535CF00D7B56E /* MainTheme */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		2A7221872D2537EC00D7B56E /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				2A7221882D25380100D7B56E /* MainTheme.swift */,
-			);
-			path = Themes;
 			sourceTree = "<group>";
 		};
 		2A7221972D33428C00D7B56E /* Frameworks */ = {
@@ -266,7 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7221832D2535F100D7B56E /* Colors.xcassets in Resources */,
+				2A7221832D2535F100D7B56E /* MainThemeColors.xcassets in Resources */,
+				2A4654DF2D38C95100E89E6A /* GrayscaleThemeColors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +288,6 @@
 				2AD2BC8E2D378EC70061B6CD /* UserDefaultsKey.swift in Sources */,
 				2AF864ED2D351B5E003DD546 /* ApplyThemeViewModifier.swift in Sources */,
 				2AD2BC872D377A5B0061B6CD /* UIWindow+Extension.swift in Sources */,
-				2A7221892D25380100D7B56E /* MainTheme.swift in Sources */,
 				2A7221862D25379300D7B56E /* ThemeManager.swift in Sources */,
 				2AD2BC832D3770990061B6CD /* Theme.swift in Sources */,
 				2AD2BC942D379B250061B6CD /* UIUserInterfaceStyle+Extension.swift in Sources */,

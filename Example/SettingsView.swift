@@ -12,8 +12,6 @@ struct SettingsView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @Binding var showingSettings: Bool
     
-    private var theme: Theme { themeManager.theme }
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -29,6 +27,18 @@ struct SettingsView: View {
                         Picker("UI User Interface Style", selection: $themeManager.uiUserInterfaceStyle) {
                             ForEach(UIUserInterfaceStyle.allCases) { style in
                                 Text(style.displayName).tag(style)
+                            }
+                        }
+                        .pickerStyle(.palette)
+                    }
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Theme")
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline)
+                        Picker("Theme", selection: $themeManager.theme) {
+                            let themePresets: [Theme] = [.main, .grayscale]
+                            ForEach(themePresets) { theme in
+                                Text(theme.name).tag(theme)
                             }
                         }
                         .pickerStyle(.palette)

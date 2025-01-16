@@ -9,10 +9,14 @@ import UIKit
 
 public class ThemeManager: ObservableObject {
     // MARK: Instance Properties
-    @Published public var theme: Theme
+    @Published public var theme: Theme {
+        didSet {
+            Self.saveThemeToUserDefaults(theme)
+        }
+    }
     @Published public var uiUserInterfaceStyle: UIUserInterfaceStyle {
         didSet {
-            saveUIUserInterfaceStyleToUserDefaults()
+            Self.saveUIUserInterfaceStyleToUserDefaults(uiUserInterfaceStyle)
             onUIUserInterfaceStyleChanged()
         }
     }
@@ -22,9 +26,10 @@ public class ThemeManager: ObservableObject {
         theme: Theme? = nil,
         uiUserInterfaceStyle: UIUserInterfaceStyle? = nil
     ) {
-        self.theme = theme ?? MainTheme()
+        self.theme = theme ?? Self.loadThemeFromUserDefaults() ?? .main
         self.uiUserInterfaceStyle = uiUserInterfaceStyle ?? Self.loadUIUserInterfaceStyleFromUserDefaults() ?? .unspecified
         
+        // Listen for window becoming active to apply UI style
         NotificationCenter.default.addObserver(self, selector: #selector(windowSceneDidBecomeActive), name: UIWindow.didBecomeKeyNotification, object: nil)
     }
     
@@ -33,14 +38,24 @@ public class ThemeManager: ObservableObject {
     }
     
     // MARK: User Defaults Helper Methods
-    private func saveUIUserInterfaceStyleToUserDefaults() {
-        UserDefaults.standard.set(uiUserInterfaceStyle.rawValue.description, forKey: UserDefaultsKey.uiUserInterfaceStyle)
+    private static func saveUIUserInterfaceStyleToUserDefaults(_ style: UIUserInterfaceStyle) {
+        UserDefaults.standard.set(style.rawValue.description, forKey: UserDefaultsKey.uiUserInterfaceStyle)
     }
     
     private static func loadUIUserInterfaceStyleFromUserDefaults() -> UIUserInterfaceStyle? {
         if let storedRawValue = UserDefaults.standard.string(forKey: UserDefaultsKey.uiUserInterfaceStyle), let storedRawValueAsInt = Int(storedRawValue) {
-           let uiUserInterfaceStyle = UIUserInterfaceStyle(rawValue: storedRawValueAsInt)
-            return uiUserInterfaceStyle
+            return UIUserInterfaceStyle(rawValue: storedRawValueAsInt)
+        }
+        return nil
+    }
+    
+    private static func saveThemeToUserDefaults(_ theme: Theme) {
+        UserDefaults.standard.set(theme.name, forKey: UserDefaultsKey.theme)
+    }
+    
+    private static func loadThemeFromUserDefaults() -> Theme? {
+        if let storedThemeName = UserDefaults.standard.string(forKey: UserDefaultsKey.theme) {
+            return Theme(name: storedThemeName)
         }
         return nil
     }

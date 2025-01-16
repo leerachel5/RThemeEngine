@@ -22,7 +22,7 @@ extension View {
     /// Applies the provided theme to the view, modifying its background color, text color, and accent color.
     /// - Parameter theme: The theme to apply. If no theme is provided, the default `MainTheme` is used.
     /// - Returns: A modified view with the applied theme.
-    public func applyTheme(_ theme: Theme = MainTheme()) -> some View {
+    public func applyTheme(_ theme: Theme = .main) -> some View {
         return self.modifier(ApplyThemeViewModifier(theme: theme))
     }
 }
