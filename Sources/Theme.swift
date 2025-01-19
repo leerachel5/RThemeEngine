@@ -41,4 +41,12 @@ extension Theme {
 // MARK: Identifiable & Hashable Conformance
 extension Theme: Identifiable, Hashable {
     public var id: String { name }
+    
+    public static func == (lhs: Theme, rhs: Theme) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
