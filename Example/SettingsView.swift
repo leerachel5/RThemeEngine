@@ -36,7 +36,7 @@ struct SettingsView: View {
                             .foregroundStyle(.secondary)
                             .font(.subheadline)
                         Picker("Theme", selection: $themeManager.theme) {
-                            let themePresets: [Theme] = [.main, .grayscale]
+                            let themePresets: [Theme] = [.main, .grayscale, .example]
                             ForEach(themePresets) { theme in
                                 Text(theme.name).tag(theme)
                             }
