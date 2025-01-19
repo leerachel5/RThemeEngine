@@ -10,4 +10,5 @@ import Foundation
 struct UserDefaultsKey {
     static let uiUserInterfaceStyle = "uiUserInterfaceStyle"
     static let theme = "theme"
+    static let themeBundleURL = "themeBundleURL"
 }

@@ -7,42 +7,38 @@
 
 import SwiftUI
 
-public struct Theme: Identifiable, Hashable {
-    // MARK: Identifiers
+public struct Theme {
+    /// The unique name used to identity the theme.
     public let name: String
-    public var id: String { name }
+    
+    /// The bundle where the theme colors are stored.
+    let bundle: Bundle
+    
+    // MARK: Initializers
+    public init(name: String = "main", bundle: Bundle) {
+        // TODO: Handle color not found in bundle
+        self.name = name
+        self.bundle = bundle
+    }
     
     // MARK: Colors
-    public let accentColor: Color
-    public let backgroundColor: Color
-    public let dividerColor: Color
-    public let primaryColor: Color
-    public let primaryTextColor: Color
-    public let secondaryColor: Color
-    public let secondaryTextColor: Color
-    public let surfaceColor: Color
+    public var accentColor: Color { Color("\(name)AccentColor", bundle: bundle) }
+    public var backgroundColor: Color { Color("\(name)BackgroundColor", bundle: bundle) }
+    public var dividerColor: Color { Color("\(name)DividerColor", bundle: bundle) }
+    public var primaryColor: Color { Color("\(name)PrimaryColor", bundle: bundle) }
+    public var primaryTextColor: Color { Color("\(name)PrimaryTextColor", bundle: bundle) }
+    public var secondaryColor: Color { Color("\(name)SecondaryColor", bundle: bundle) }
+    public var secondaryTextColor: Color { Color("\(name)SecondaryTextColor", bundle: bundle) }
+    public var surfaceColor: Color { Color("\(name)SurfaceColor", bundle: bundle) }
 }
 
 // MARK: Theme Presets
 extension Theme {
-    public static let main = Theme(name: "main")
-    public static let grayscale = Theme(name: "grayscale")
+    public static let main = Theme(name: "main", bundle: Bundle.rThemeEngineBundle)
+    public static let grayscale = Theme(name: "grayscale", bundle: Bundle.rThemeEngineBundle)
 }
 
-// MARK: Public Initializers
-extension Theme {
-    public init(name: String = "main") {
-        // TODO: Handle color not found in bundle
-        self.init(
-            name: name,
-            accentColor: Color("\(name)AccentColor", bundle: Bundle.rThemeEngineBundle),
-            backgroundColor: Color("\(name)BackgroundColor", bundle: Bundle.rThemeEngineBundle),
-            dividerColor: Color("\(name)DividerColor", bundle: Bundle.rThemeEngineBundle),
-            primaryColor: Color("\(name)PrimaryColor", bundle: Bundle.rThemeEngineBundle),
-            primaryTextColor: Color("\(name)PrimaryTextColor", bundle: Bundle.rThemeEngineBundle),
-            secondaryColor: Color("\(name)SecondaryColor", bundle: Bundle.rThemeEngineBundle),
-            secondaryTextColor: Color("\(name)SecondaryTextColor", bundle: Bundle.rThemeEngineBundle),
-            surfaceColor: Color("\(name)SurfaceColor", bundle: Bundle.rThemeEngineBundle)
-        )
-    }
+// MARK: Identifiable & Hashable Conformance
+extension Theme: Identifiable, Hashable {
+    public var id: String { name }
 }

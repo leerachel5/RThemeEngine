@@ -51,11 +51,12 @@ public class ThemeManager: ObservableObject {
     
     private static func saveThemeToUserDefaults(_ theme: Theme) {
         UserDefaults.standard.set(theme.name, forKey: UserDefaultsKey.theme)
+        UserDefaults.standard.set(theme.bundle.bundleURL, forKey: UserDefaultsKey.themeBundleURL)
     }
     
     private static func loadThemeFromUserDefaults() -> Theme? {
-        if let storedThemeName = UserDefaults.standard.string(forKey: UserDefaultsKey.theme) {
-            return Theme(name: storedThemeName)
+        if let storedThemeName = UserDefaults.standard.string(forKey: UserDefaultsKey.theme), let storedThemeBundleURL = UserDefaults.standard.url(forKey: UserDefaultsKey.themeBundleURL), let storedThemeBundle = Bundle(url: storedThemeBundleURL) {
+            return Theme(name: storedThemeName, bundle: storedThemeBundle)
         }
         return nil
     }
