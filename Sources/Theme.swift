@@ -24,6 +24,7 @@ public struct Theme {
     // MARK: Colors
     public var accentColor: Color { Color("\(name)AccentColor", bundle: bundle) }
     public var backgroundColor: Color { Color("\(name)BackgroundColor", bundle: bundle) }
+    public var complementaryTextColor: Color { Color("\(name)ComplementaryTextColor", bundle: bundle) }
     public var dividerColor: Color { Color("\(name)DividerColor", bundle: bundle) }
     public var primaryColor: Color { Color("\(name)PrimaryColor", bundle: bundle) }
     public var primaryTextColor: Color { Color("\(name)PrimaryTextColor", bundle: bundle) }
